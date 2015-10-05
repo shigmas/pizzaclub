@@ -1,0 +1,13 @@
+<table>
+<tr><td>Pizzeria</td> <td> Our visit(ts) </td></tr>
+{% for shop in pizzeria_list %}
+<tr>
+<td>
+ <a href="{{ shop.url }}"> {{ shop.name }} </a>
+</td>
+<td>
+  <a href="#/details/{{shop.id}}">Details</a>
+</td>
+</tr>
+{% endfor %}
+</table>

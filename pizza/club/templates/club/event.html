@@ -1,0 +1,36 @@
+
+<table>
+{% verbatim %}
+<tr ng-repeat="vote in vote_list">
+  <td>User: {{ vote.name }}</td>
+  <td>Crust: {{ vote.crust }}</td>
+  <td>Sauce: {{ vote.sauce }}</td>
+  <td>Service: {{ vote.service }}</td>
+  <td>Creativity: {{ vote.creativity }}</td>
+  <td>Overall: {{ vote.overall }}</td>
+{% endverbatim %}
+</tr>
+</table>
+
+{% if user.is_authenticated %}
+<p>Update/create vote for {{ user.username }}</p>
+{% verbatim %}
+<div>
+Crust: <input ng-model="id_crust" step=0.5 type="number" />
+</div>
+<div>
+Sauce: <input ng-model="id_sauce" step=0.5 type="number" />
+</div>
+<div>
+Service: <input ng-model="id_service" step=0.5 type="number" />
+</div>
+<div>
+Creativity: <input ng-model="id_creativity" step=0.5 type="number" />
+</div>
+<div>
+Overall: <input ng-model="id_overall" step=0.5 type="number" />
+</div>
+{% endverbatim %}
+<button id="submitVote" class="btn btn-primary" type="button" 
+        ng-click="submitVote(id_crust, id_sauce, id_service, id_creativity, id_overall)">Vote (or Update)</button>
+{% endif %}

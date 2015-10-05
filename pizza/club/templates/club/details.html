@@ -1,0 +1,29 @@
+<table>
+<tr>
+<td>{{ pizzeria.name }}:</td>
+<td><b>Neighborhood:</b>{{ pizzeria.neighborhood.name }}</td>
+<td><b>Specialty:</b> {{ pizzeria.specialty }}</bd>
+</tr>
+</table>
+
+{% for visit in visit_list %}
+<table>
+<tr>
+<td><a href="#/event/{{ visit.id }}">Event:</a></td>
+<td>Date: {{ visit.date }}</td>
+</tr>
+<tr>
+<td colspan=2>Notes: {{ visit.notes }}</td>
+</tr
+</table>
+
+<table>
+<tr>
+<td>Crust: {{ visit.crust }}</td>
+<td>Sauce: {{ visit.sauce }}</td>
+<td>Service: {{ visit.service }}</td>
+<td>Creativity: {{ visit.creativity }}</td>
+<td>Overall: {{ visit.overall }}</td>
+</tr>
+</table>
+{% endfor %}

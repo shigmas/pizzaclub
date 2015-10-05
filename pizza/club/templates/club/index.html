@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="pizzaclubApp">
+{% load staticfiles %}
+<head>
+  <meta charset="utf-8">
+  <title>Pizza Club</title>
+  <script src="{% static "js/angular/angular.js" %}"></script>
+  <script src="{% static "js/angular-route/angular-route.js" %}"></script>
+  <script src="{% static "js/app.js" %}"></script>
+  <script src="{% static "js/controllers.js" %}"></script>
+</head>
+<body>
+<P>
+Welcome,
+{% if user.is_authenticated %}
+  {{ user.username }}
+{% else %}
+  <a href="/club/login/">Login</a>
+{% endif %}
+  <a href="/club/logout/">Logout</a>
+</P>
+<P>
+<a href="/club/#/list">Top</a>
+</P>
+
+<div ng-view></div>
+</body>
+</html>
