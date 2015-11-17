@@ -38,19 +38,27 @@ pizzaclubControllers.controller('PizzaclubEventCtrl', ['$scope', '$http', '$rout
       }          
 
       $scope.submitVote = function(id_crust, id_sauce, id_service, id_creativity, id_overall) {
-          $http.post("views/vote/", {event_id : $scope.event_id,
-                                    vote: {
-                                        crust: id_crust,
-                                        sauce: id_sauce,
-                                        service: id_service,
-                                        creativity: id_creativity,
-                                        overall: id_overall,
-                                    },
-                                    })
-              .success(function(data, status, headers, config){
-                  setInScope(data);
-              });
+          // Verify that the values exist and are valid
+          if ((id_crust >= 0 || id_crust <= 5) &&
+              (id_sauce >= 0 || id_sauce <= 5) &&
+              (id_service >= 0 || id_service <= 5) &&
+              (id_creativity >= 0 || id_creativity <= 5) &&
+              (id_overall >= 0 || id_overall <= 5)) {
+              $http.post("views/vote/", {event_id : $scope.event_id,
+                                         vote: {
+                                             crust: id_crust,
+                                             sauce: id_sauce,
+                                             service: id_service,
+                                             creativity: id_creativity,
+                                             overall: id_overall,
+                                         },
+                                        })
+                  .success(function(data, status, headers, config){
+                      setInScope(data);
+                  });
+          } else {
+              alert('You have incorrect values')
+          }
       }
-
   }]);
 
