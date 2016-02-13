@@ -44,9 +44,10 @@ class Vote(models.Model):
     service = models.FloatField()
     creativity = models.FloatField()
     overall = models.FloatField()
+    comment = models.CharField(max_length = 1024)
 
     def __str__(self):
         return '%s: voted crust: %s, sauce: %s, service: %s, creativity: %s,\
-  overall: %s' % (self.voter.username, self.crust, self.sauce, self.service,
-                  self.creativity, self.overall)
+  overall: %s, comment: %s' % (self.voter.username, self.crust, self.sauce, self.service,
+                  self.creativity, self.overall, self.comment)
 

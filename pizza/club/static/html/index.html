@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="PizzaClubApp">
+<meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <title>Pizza Club</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/js.cookie.js"></script>
+  <script src="/static/js/controllers.js"></script>
+
+</head>
+<body ng-controller="PizzaClubCtrlr as ctrlr">
+<P>
+<div>
+Welcome {{ ctrlr.login }},
+</div>
+<div>
+  <a href="/club/login/">Login</a>
+</div>
+<div>
+  <a href="/club/logout/">Logout</a>
+</div>
+</P>
+<P>
+<a href="/club/#/list">Top</a>
+</P>
+
+<div ng-view></div>
+</body>
+</html>

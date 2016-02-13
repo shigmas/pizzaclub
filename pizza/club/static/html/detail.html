@@ -1,0 +1,24 @@
+<table>
+<tr>
+<td>{{ ctrlr.pizzeria.name }}:</td>
+<td><b>Neighborhood:</b>{{ ctrlr.pizzeria.neighborhood }}</td>
+<td><b>Specialty:</b> {{ ctrlr.pizzeria.specialty }}</bd>
+</tr>
+</table>
+
+<table ng-repeat="visit in ctrlr.visit_list">
+<tr>
+<td><a href="#/event/{{ visit.id }}">Event:</a></td>
+<td>Date: {{ visit.date }}</td>
+</tr>
+<tr>
+<td colspan=2>Notes: {{ visit.notes }}</td>
+</tr>
+<tr>
+<td>Crust: {{ visit.crust }}</td>
+<td>Sauce: {{ visit.sauce }}</td>
+<td>Service: {{ visit.service }}</td>
+<td>Creativity: {{ visit.creativity }}</td>
+<td>Overall: {{ visit.overall }}</td>
+</tr>
+</table>

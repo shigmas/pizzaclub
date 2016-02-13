@@ -1,0 +1,43 @@
+
+<table ng-repeat="vote in ctrlr.vote_list">
+<tr>
+  <td>User: {{ vote.login }}</td>
+  <td>Crust: {{ vote.crust }}</td>
+  <td>Sauce: {{ vote.sauce }}</td>
+  <td>Service: {{ vote.service }}</td>
+  <td>Creativity: {{ vote.creativity }}</td>
+  <td>Overall: {{ vote.overall }}</td>
+  <td>Comment: {{ vote.comment }}</td>
+</tr>
+</table>
+
+
+<p>Update/create vote for {{ ctrlr.login }}</p>
+<!-- django: leave as is for javascript processing
+{% verbatim %}
+-->
+<div>
+Crust: <input ng-model="ctrlr.vote.crust" step=0.5 type="number"/>
+</div>
+<div>
+Sauce: <input ng-model="ctrlr.vote.sauce" step=0.5 type="number" />
+</div>
+<div>
+Service: <input ng-model="ctrlr.vote.service" step=0.5 type="number" />
+</div>
+<div>
+Creativity: <input ng-model="ctrlr.vote.creativity" step=0.5 type="number" />
+</div>
+<div>
+Overall: <input ng-model="ctrlr.vote.overall" step=0.5 type="number" />
+</div>
+<div>
+Comment: <input ng-model="ctrlr.vote.comment" type="text" />
+</div>
+<!-- 
+{% endverbatim %}
+-->
+<div><font color='red'>{{ctrlr.errorMessage}}</font></div>
+<button id="submitVote" class="btn btn-primary" type="button" 
+        ng-click="ctrlr.submitVote()">Vote (or Update)</button>
+
